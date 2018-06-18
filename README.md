@@ -1,19 +1,41 @@
-# Omnichannel API Client for Node
+# omnichannel_api
 
-OmnichannelApiNode - NodeJS client for Messente's OmnichannelAPI
-
-This is the client for the beta version of Omnichannel API
+OmnichannelApi - JavaScript client for omnichannel_api
+This is the beta version of Omnichannel API
 
 ## Installation
 
-#### git
-If the library is hosted at a git repository, e.g.
-https://github.com/YOUR_USERNAME/omnichannel_api
-then install it via:
+### For [Node.js](https://nodejs.org/)
+
+#### npm
 
 ```shell
-    npm install YOUR_USERNAME/omnichannel_api --save
+npm install omnichannel_api --save
 ```
+
+##### Local development
+
+To use the library locally , first install the dependencies by changing
+into the directory containing `package.json` (and this README). Let's call this `JAVASCRIPT_CLIENT_DIR`. Then run:
+
+```shell
+npm install
+```
+
+Next, [link](https://docs.npmjs.com/cli/link) it globally in npm with the following, also from `JAVASCRIPT_CLIENT_DIR`:
+
+```shell
+npm link
+```
+
+Finally, switch to the directory you want to use your omnichannel_api from, and run:
+
+```shell
+npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
+```
+
+You should now be able to `require('omnichannel_api')` in javascript files from the directory you ran the last 
+command above from.
 
 ### For browser
 

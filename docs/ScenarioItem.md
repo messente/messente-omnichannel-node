@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**channel** | **String** |  | 
-**validity** | **Number** |  | [optional] 
+**channel** | **String** | Defines the delivery channel | 
+**validity** | **Number** | After how many minutes this channel is considered as failed and the next channel is attempted | [optional] 
 
 
 <a name="ChannelEnum"></a>

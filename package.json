@@ -1,7 +1,7 @@
 {
   "name": "omnichannel_api",
-  "version": "1.0.0",
-  "description": "This_is_the_beta_version_of_Omnichannel_API",
+  "version": "0.0.1",
+  "description": "Javascript API client for Messente Omnichannel API",
   "license": "Apache 2.0",
   "main": "src/index.js",
   "scripts": {
