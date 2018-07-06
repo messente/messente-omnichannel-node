@@ -31,7 +31,6 @@
   var instance;
 
   beforeEach(function() {
-    instance = new OmnichannelApi.OmnimessageApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,27 +49,13 @@
       object[property] = value;
   }
 
-  describe('OmnimessageApi', function() {
-    describe('cancelScheduledMessage', function() {
-      it('should call cancelScheduledMessage successfully', function(done) {
-        //uncomment below and update the code to test cancelScheduledMessage
-        //instance.cancelScheduledMessage(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('ResponseErrorCode', function() {
+    it('should create an instance of ResponseErrorCode', function() {
+      // uncomment below and update the code to test ResponseErrorCode
+      //var instance = new OmnichannelApi.ResponseErrorCode();
+      //expect(instance).to.be.a(OmnichannelApi.ResponseErrorCode);
     });
-    describe('sendOmnimessage', function() {
-      it('should call sendOmnimessage successfully', function(done) {
-        //uncomment below and update the code to test sendOmnimessage
-        //instance.sendOmnimessage(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
+
   });
 
 }));

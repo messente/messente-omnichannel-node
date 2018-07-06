@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new OmnichannelApi.OmnimessageApi();
+    instance = new OmnichannelApi.Message();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,27 +50,31 @@
       object[property] = value;
   }
 
-  describe('OmnimessageApi', function() {
-    describe('cancelScheduledMessage', function() {
-      it('should call cancelScheduledMessage successfully', function(done) {
-        //uncomment below and update the code to test cancelScheduledMessage
-        //instance.cancelScheduledMessage(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('Message', function() {
+    it('should create an instance of Message', function() {
+      // uncomment below and update the code to test Message
+      //var instance = new OmnichannelApi.Message();
+      //expect(instance).to.be.a(OmnichannelApi.Message);
     });
-    describe('sendOmnimessage', function() {
-      it('should call sendOmnimessage successfully', function(done) {
-        //uncomment below and update the code to test sendOmnimessage
-        //instance.sendOmnimessage(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property channel (base name: "channel")', function() {
+      // uncomment below and update the code to test the property channel
+      //var instance = new OmnichannelApi.Message();
+      //expect(instance).to.be();
     });
+
+    it('should have the property sender (base name: "sender")', function() {
+      // uncomment below and update the code to test the property sender
+      //var instance = new OmnichannelApi.Message();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property validity (base name: "validity")', function() {
+      // uncomment below and update the code to test the property validity
+      //var instance = new OmnichannelApi.Message();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

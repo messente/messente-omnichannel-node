@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new OmnichannelApi.OmnimessageApi();
+    instance = new OmnichannelApi.ErrorItem();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,27 +50,37 @@
       object[property] = value;
   }
 
-  describe('OmnimessageApi', function() {
-    describe('cancelScheduledMessage', function() {
-      it('should call cancelScheduledMessage successfully', function(done) {
-        //uncomment below and update the code to test cancelScheduledMessage
-        //instance.cancelScheduledMessage(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('ErrorItem', function() {
+    it('should create an instance of ErrorItem', function() {
+      // uncomment below and update the code to test ErrorItem
+      //var instance = new OmnichannelApi.ErrorItem();
+      //expect(instance).to.be.a(OmnichannelApi.ErrorItem);
     });
-    describe('sendOmnimessage', function() {
-      it('should call sendOmnimessage successfully', function(done) {
-        //uncomment below and update the code to test sendOmnimessage
-        //instance.sendOmnimessage(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property title (base name: "title")', function() {
+      // uncomment below and update the code to test the property title
+      //var instance = new OmnichannelApi.ErrorItem();
+      //expect(instance).to.be();
     });
+
+    it('should have the property detail (base name: "detail")', function() {
+      // uncomment below and update the code to test the property detail
+      //var instance = new OmnichannelApi.ErrorItem();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property code (base name: "code")', function() {
+      // uncomment below and update the code to test the property code
+      //var instance = new OmnichannelApi.ErrorItem();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property source (base name: "source")', function() {
+      // uncomment below and update the code to test the property source
+      //var instance = new OmnichannelApi.ErrorItem();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -11,21 +11,16 @@ var api = new OmnichannelApi.OmnimessageApi();
 var body = new OmnichannelApi.Omnimessage(); // {Omnimessage} Omnimessage to be sent
 
 var viber = new OmnichannelApi.Viber();
-viber.text="Hello Viber!";
-viber.sender = "<phone number or sender name (optional field)>";
+viber.text = "Hello Viber!";
+viber.sender = "<sender name (optional field)>";
 
 var sms = new OmnichannelApi.SMS();
 sms.text = "Hello SMS!";
-sms.sender = "<phone number or sender name (optional field)>";
+sms.sender = "<sender name (optional field)>";
 
-var scenarios = new OmnichannelApi.Scenarios();
-var scenarioItemViber = new OmnichannelApi.ScenarioItem(channel=OmnichannelApi.ScenarioItem.ChannelEnum.viber);
-var scenarioItemSms = new OmnichannelApi.ScenarioItem(channel=OmnichannelApi.ScenarioItem.ChannelEnum.sms);
-
-body.scenarios = [scenarioItemViber, scenarioItemSms];
-body.viber = viber;
-body.sms = sms;
-body.to = "<phone number>";
+// order of the messages in the array defines in which order the respective channels are tried
+body.messages = [viber, sms];
+body.to = "<phone number in international format>";
 
 
 var callback = function(error, data, response) {

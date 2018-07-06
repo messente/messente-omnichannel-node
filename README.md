@@ -86,21 +86,16 @@ var api = new OmnichannelApi.OmnimessageApi();
 var body = new OmnichannelApi.Omnimessage(); // {Omnimessage} Omnimessage to be sent
 
 var viber = new OmnichannelApi.Viber();
-viber.text="Hello Viber!";
-viber.sender = "<phone number or sender name (optional field)>";
+viber.text = "Hello Viber!";
+viber.sender = "<sender name (optional field)>";
 
 var sms = new OmnichannelApi.SMS();
 sms.text = "Hello SMS!";
-sms.sender = "<phone number or sender name (optional field)>";
+sms.sender = "<sender name (optional field)>";
 
-var scenarios = new OmnichannelApi.Scenarios();
-var scenarioItemViber = new OmnichannelApi.ScenarioItem(channel=OmnichannelApi.ScenarioItem.ChannelEnum.viber);
-var scenarioItemSms = new OmnichannelApi.ScenarioItem(channel=OmnichannelApi.ScenarioItem.ChannelEnum.sms);
-
-body.scenarios = [scenarioItemViber, scenarioItemSms];
-body.viber = viber;
-body.sms = sms;
-body.to = "<phone number>";
+// order of the messages in the array defines in which order the respective channels are tried
+body.messages = [viber, sms];
+body.to = "<phone number in international format>";
 
 
 var callback = function(error, data, response) {
@@ -120,18 +115,27 @@ All URIs are relative to *https://api.messente.com/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*OmnichannelApi.DeliveryReportApi* | [**retrieveDeliveryReport**](docs/DeliveryReportApi.md#retrieveDeliveryReport) | **GET** /omnimessage/{omnimessage_id}/status | Retrieves the delivery report for the Omnimessage
+*OmnichannelApi.OmnimessageApi* | [**cancelScheduledMessage**](docs/OmnimessageApi.md#cancelScheduledMessage) | **DELETE** /omnimessage/{omnimessage_id} | Cancels a scheduled Omnimessage
 *OmnichannelApi.OmnimessageApi* | [**sendOmnimessage**](docs/OmnimessageApi.md#sendOmnimessage) | **POST** /omnimessage | Sends an Omnimessage
 
 
 ## Documentation for Models
 
+ - [OmnichannelApi.Channel](docs/Channel.md)
+ - [OmnichannelApi.DeliveryReportResponse](docs/DeliveryReportResponse.md)
+ - [OmnichannelApi.DeliveryResult](docs/DeliveryResult.md)
+ - [OmnichannelApi.Err](docs/Err.md)
+ - [OmnichannelApi.ErrorItem](docs/ErrorItem.md)
  - [OmnichannelApi.ErrorResponse](docs/ErrorResponse.md)
+ - [OmnichannelApi.Message](docs/Message.md)
  - [OmnichannelApi.MessageResult](docs/MessageResult.md)
  - [OmnichannelApi.OmniMessageCreateSuccessResponse](docs/OmniMessageCreateSuccessResponse.md)
  - [OmnichannelApi.Omnimessage](docs/Omnimessage.md)
+ - [OmnichannelApi.ResponseErrorCode](docs/ResponseErrorCode.md)
+ - [OmnichannelApi.ResponseErrorTitle](docs/ResponseErrorTitle.md)
  - [OmnichannelApi.SMS](docs/SMS.md)
- - [OmnichannelApi.ScenarioItem](docs/ScenarioItem.md)
- - [OmnichannelApi.Scenarios](docs/Scenarios.md)
+ - [OmnichannelApi.Status](docs/Status.md)
  - [OmnichannelApi.Viber](docs/Viber.md)
 
 

@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new OmnichannelApi.MessageResult();
+    instance = new OmnichannelApi.DeliveryResult();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,28 +50,46 @@
       object[property] = value;
   }
 
-  describe('MessageResult', function() {
-    it('should create an instance of MessageResult', function() {
-      // uncomment below and update the code to test MessageResult
-      //var instance = new OmnichannelApi.MessageResult();
-      //expect(instance).to.be.a(OmnichannelApi.MessageResult);
+  describe('DeliveryResult', function() {
+    it('should create an instance of DeliveryResult', function() {
+      // uncomment below and update the code to test DeliveryResult
+      //var instance = new OmnichannelApi.DeliveryResult();
+      //expect(instance).to.be.a(OmnichannelApi.DeliveryResult);
     });
 
-    it('should have the property messageId (base name: "message_id")', function() {
-      // uncomment below and update the code to test the property messageId
-      //var instance = new OmnichannelApi.MessageResult();
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
+      //var instance = new OmnichannelApi.DeliveryResult();
       //expect(instance).to.be();
     });
 
     it('should have the property channel (base name: "channel")', function() {
       // uncomment below and update the code to test the property channel
-      //var instance = new OmnichannelApi.MessageResult();
+      //var instance = new OmnichannelApi.DeliveryResult();
       //expect(instance).to.be();
     });
 
-    it('should have the property sender (base name: "sender")', function() {
-      // uncomment below and update the code to test the property sender
-      //var instance = new OmnichannelApi.MessageResult();
+    it('should have the property messageId (base name: "message_id")', function() {
+      // uncomment below and update the code to test the property messageId
+      //var instance = new OmnichannelApi.DeliveryResult();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property error (base name: "error")', function() {
+      // uncomment below and update the code to test the property error
+      //var instance = new OmnichannelApi.DeliveryResult();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property err (base name: "err")', function() {
+      // uncomment below and update the code to test the property err
+      //var instance = new OmnichannelApi.DeliveryResult();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property timestamp (base name: "timestamp")', function() {
+      // uncomment below and update the code to test the property timestamp
+      //var instance = new OmnichannelApi.DeliveryResult();
       //expect(instance).to.be();
     });
 

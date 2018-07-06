@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new OmnichannelApi.OmnimessageApi();
+    instance = new OmnichannelApi.DeliveryReportResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,27 +50,31 @@
       object[property] = value;
   }
 
-  describe('OmnimessageApi', function() {
-    describe('cancelScheduledMessage', function() {
-      it('should call cancelScheduledMessage successfully', function(done) {
-        //uncomment below and update the code to test cancelScheduledMessage
-        //instance.cancelScheduledMessage(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('DeliveryReportResponse', function() {
+    it('should create an instance of DeliveryReportResponse', function() {
+      // uncomment below and update the code to test DeliveryReportResponse
+      //var instance = new OmnichannelApi.DeliveryReportResponse();
+      //expect(instance).to.be.a(OmnichannelApi.DeliveryReportResponse);
     });
-    describe('sendOmnimessage', function() {
-      it('should call sendOmnimessage successfully', function(done) {
-        //uncomment below and update the code to test sendOmnimessage
-        //instance.sendOmnimessage(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property statuses (base name: "statuses")', function() {
+      // uncomment below and update the code to test the property statuses
+      //var instance = new OmnichannelApi.DeliveryReportResponse();
+      //expect(instance).to.be();
     });
+
+    it('should have the property to (base name: "to")', function() {
+      // uncomment below and update the code to test the property to
+      //var instance = new OmnichannelApi.DeliveryReportResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property omnimessageId (base name: "omnimessage_id")', function() {
+      // uncomment below and update the code to test the property omnimessageId
+      //var instance = new OmnichannelApi.DeliveryReportResponse();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
