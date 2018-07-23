@@ -16,24 +16,24 @@ Cancels a scheduled Omnimessage
 
 ### Example
 ```javascript
-var OmnichannelApi = require('omnichannel_api');
-var defaultClient = OmnichannelApi.ApiClient.instance;
+const OmnichannelApi = require('omnichannel_api');
+const defaultClient = OmnichannelApi.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
-var basicAuth = defaultClient.authentications['basicAuth'];
+const basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR_MESSENTE_API_USERNAME';
-basicAuth.password = 'YPUR_MESSENTE_API_PASSWORD';
+basicAuth.password = 'YOUR_MESSENTE_API_PASSWORD';
 
-var apiInstance = new OmnichannelApi.OmnimessageApi();
 var omnimessageId = null; // String | UUID of the scheduled Omnimessage to be cancelled
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.cancelScheduledMessage(omnimessageId, callback);
+const api = new OmnichannelApi.OmnimessageApi();
+
+api.cancelScheduledMessage(omnimessageId, (error, data) => {
+    if (error) {
+        console.error(error);
+    } else {
+        console.log('API called successfully. Returned data: ', data);
+    }
+});
 ```
 
 ### Parameters
