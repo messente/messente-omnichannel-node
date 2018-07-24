@@ -24,7 +24,7 @@ const sms = OmnichannelApi.SMS.constructFromObject(
 
 const omnimessage = OmnichannelApi.Omnimessage.constructFromObject({
     messages: [viber, sms],
-    to:"+37253448365"
+    to:"<phone number in international format>"
 });
 
 api.sendOmnimessage(omnimessage, (error, data) => {
@@ -34,4 +34,3 @@ api.sendOmnimessage(omnimessage, (error, data) => {
         console.log('API called successfully. Returned data: ', data);
     }
 });
-
