@@ -1,7 +1,6 @@
 # omnichannel_api
 
 OmnichannelApi - JavaScript client for omnichannel_api
-This is the beta version of Omnichannel API
 
 ## Installation
 
