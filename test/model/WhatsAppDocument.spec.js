@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new OmnichannelApi.OmnimessageApi();
+    instance = new OmnichannelApi.WhatsAppDocument();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,27 +50,25 @@
       object[property] = value;
   }
 
-  describe('OmnimessageApi', function() {
-    describe('cancelScheduledMessage', function() {
-      it('should call cancelScheduledMessage successfully', function(done) {
-        //uncomment below and update the code to test cancelScheduledMessage
-        //instance.cancelScheduledMessage(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('WhatsAppDocument', function() {
+    it('should create an instance of WhatsAppDocument', function() {
+      // uncomment below and update the code to test WhatsAppDocument
+      //var instance = new OmnichannelApi.WhatsAppDocument();
+      //expect(instance).to.be.a(OmnichannelApi.WhatsAppDocument);
     });
-    describe('sendOmnimessage', function() {
-      it('should call sendOmnimessage successfully', function(done) {
-        //uncomment below and update the code to test sendOmnimessage
-        //instance.sendOmnimessage(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property caption (base name: "caption")', function() {
+      // uncomment below and update the code to test the property caption
+      //var instance = new OmnichannelApi.WhatsAppDocument();
+      //expect(instance).to.be();
     });
+
+    it('should have the property content (base name: "content")', function() {
+      // uncomment below and update the code to test the property content
+      //var instance = new OmnichannelApi.WhatsAppDocument();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -1,7 +1,7 @@
 {
   "name": "omnichannel_api",
   "version": "0.0.1",
-  "description": "Javascript API client for Messente Omnichannel API",
+  "description": "Messentes_API_which_allows_sending_messages_via_various_channels_with_fallback_options_",
   "license": "Apache 2.0",
   "main": "src/index.js",
   "scripts": {

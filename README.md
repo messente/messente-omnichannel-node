@@ -83,22 +83,28 @@ basicAuth.password = 'YOUR_MESSENTE_API_PASSWORD';
 
 const api = new OmnichannelApi.OmnimessageApi();
 
-const viber = OmnichannelApi.Viber.constructFromObject(
-    {
-        text:"Hello Viber!",
-        sender: "Messente",
-    }
-);
+const viber = OmnichannelApi.Viber.constructFromObject({
+    text: "Hello Viber!",
+    sender: "Messente",
+});
 
-const sms = OmnichannelApi.SMS.constructFromObject(
-    {
-        text: "Hello SMS!",
-    }
-);
+const sms = OmnichannelApi.SMS.constructFromObject({
+    text: "Hello SMS!",
+});
+
+const whatsAppText = OmnichannelApi.WhatsAppText.constructFromObject({
+    body: "Hello WhatsApp!",
+    preview_url: false
+});
+
+
+const whatsapp = OmnichannelApi.WhatsApp.constructFromObject({
+    text: whatsAppText
+});
 
 const omnimessage = OmnichannelApi.Omnimessage.constructFromObject({
-    messages: [viber, sms],
-    to:"<phone number in international format>"
+    messages: [whatsapp, viber, sms],
+    to:"<phone number in e.164 format"
 });
 
 api.sendOmnimessage(omnimessage, (error, data) => {
@@ -139,6 +145,11 @@ Class | Method | HTTP request | Description
  - [OmnichannelApi.SMS](docs/SMS.md)
  - [OmnichannelApi.Status](docs/Status.md)
  - [OmnichannelApi.Viber](docs/Viber.md)
+ - [OmnichannelApi.WhatsApp](docs/WhatsApp.md)
+ - [OmnichannelApi.WhatsAppAudio](docs/WhatsAppAudio.md)
+ - [OmnichannelApi.WhatsAppDocument](docs/WhatsAppDocument.md)
+ - [OmnichannelApi.WhatsAppImage](docs/WhatsAppImage.md)
+ - [OmnichannelApi.WhatsAppText](docs/WhatsAppText.md)
 
 
 ## Documentation for Authorization

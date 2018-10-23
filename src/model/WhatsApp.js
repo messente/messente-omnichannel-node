@@ -17,54 +17,54 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Message'], factory);
+    define(['ApiClient', 'model/Message', 'model/WhatsAppAudio', 'model/WhatsAppDocument', 'model/WhatsAppImage', 'model/WhatsAppText'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Message'));
+    module.exports = factory(require('../ApiClient'), require('./Message'), require('./WhatsAppAudio'), require('./WhatsAppDocument'), require('./WhatsAppImage'), require('./WhatsAppText'));
   } else {
     // Browser globals (root is window)
     if (!root.OmnichannelApi) {
       root.OmnichannelApi = {};
     }
-    root.OmnichannelApi.SMS = factory(root.OmnichannelApi.ApiClient, root.OmnichannelApi.Message);
+    root.OmnichannelApi.WhatsApp = factory(root.OmnichannelApi.ApiClient, root.OmnichannelApi.Message, root.OmnichannelApi.WhatsAppAudio, root.OmnichannelApi.WhatsAppDocument, root.OmnichannelApi.WhatsAppImage, root.OmnichannelApi.WhatsAppText);
   }
-}(this, function(ApiClient, Message) {
+}(this, function(ApiClient, Message, WhatsAppAudio, WhatsAppDocument, WhatsAppImage, WhatsAppText) {
   'use strict';
 
 
 
 
   /**
-   * The SMS model module.
-   * @module model/SMS
+   * The WhatsApp model module.
+   * @module model/WhatsApp
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>SMS</code>.
-   * @alias module:model/SMS
+   * Constructs a new <code>WhatsApp</code>.
+   * @alias module:model/WhatsApp
    * @class
    * @extends module:model/Message
    * @implements module:model/Message
    * @param channel {} 
-   * @param text {} Text content of the SMS
    */
-  var exports = function(channel, text) {
+  var exports = function(channel) {
     var _this = this;
     Message.call(_this, channel);
     Message.call(_this, channel);
-    _this['text'] = text;
-    _this['channel'] = "sms";
+    _this['channel'] = "whatsapp";
+
+
 
 
   };
 
   /**
-   * Constructs a <code>SMS</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>WhatsApp</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/SMS} obj Optional instance to populate.
-   * @return {module:model/SMS} The populated <code>SMS</code> instance.
+   * @param {module:model/WhatsApp} obj Optional instance to populate.
+   * @return {module:model/WhatsApp} The populated <code>WhatsApp</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -72,13 +72,16 @@
       Message.constructFromObject(data, obj);
       Message.constructFromObject(data, obj);
       if (data.hasOwnProperty('text')) {
-        obj['text'] = ApiClient.convertToType(data['text'], 'String');
+        obj['text'] = WhatsAppText.constructFromObject(data['text']);
       }
-      if (data.hasOwnProperty('autoconvert')) {
-        obj['autoconvert'] = ApiClient.convertToType(data['autoconvert'], 'Number');
+      if (data.hasOwnProperty('image')) {
+        obj['image'] = WhatsAppImage.constructFromObject(data['image']);
       }
-      if (data.hasOwnProperty('udh')) {
-        obj['udh'] = ApiClient.convertToType(data['udh'], 'String');
+      if (data.hasOwnProperty('document')) {
+        obj['document'] = WhatsAppDocument.constructFromObject(data['document']);
+      }
+      if (data.hasOwnProperty('audio')) {
+        obj['audio'] = WhatsAppAudio.constructFromObject(data['audio']);
       }
     }
     return obj;
@@ -88,20 +91,21 @@
   exports.prototype.constructor = exports;
 
   /**
-   * Text content of the SMS
-   * @member {String} text
+   * @member {module:model/WhatsAppText} text
    */
   exports.prototype['text'] = undefined;
   /**
-   * Defines how non-GSM characters will be treated: - \"on\" Use replacement settings from the account's [API Auto Replace settings page](https://dashboard.messente.com/api-settings/auto-replace)(default) - \"full\" All non GSM 03.38 characters will be replaced with suitable alternatives - \"off\" Message content is not modified in any way 
-   * @member {Number} autoconvert
+   * @member {module:model/WhatsAppImage} image
    */
-  exports.prototype['autoconvert'] = undefined;
+  exports.prototype['image'] = undefined;
   /**
-   * hex-encoded string containing SMS UDH
-   * @member {String} udh
+   * @member {module:model/WhatsAppDocument} document
    */
-  exports.prototype['udh'] = undefined;
+  exports.prototype['document'] = undefined;
+  /**
+   * @member {module:model/WhatsAppAudio} audio
+   */
+  exports.prototype['audio'] = undefined;
 
   // Implement Message interface:
   /**

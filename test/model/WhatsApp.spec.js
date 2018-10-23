@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new OmnichannelApi.OmnimessageApi();
+    instance = new OmnichannelApi.WhatsApp();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,27 +50,37 @@
       object[property] = value;
   }
 
-  describe('OmnimessageApi', function() {
-    describe('cancelScheduledMessage', function() {
-      it('should call cancelScheduledMessage successfully', function(done) {
-        //uncomment below and update the code to test cancelScheduledMessage
-        //instance.cancelScheduledMessage(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('WhatsApp', function() {
+    it('should create an instance of WhatsApp', function() {
+      // uncomment below and update the code to test WhatsApp
+      //var instance = new OmnichannelApi.WhatsApp();
+      //expect(instance).to.be.a(OmnichannelApi.WhatsApp);
     });
-    describe('sendOmnimessage', function() {
-      it('should call sendOmnimessage successfully', function(done) {
-        //uncomment below and update the code to test sendOmnimessage
-        //instance.sendOmnimessage(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property text (base name: "text")', function() {
+      // uncomment below and update the code to test the property text
+      //var instance = new OmnichannelApi.WhatsApp();
+      //expect(instance).to.be();
     });
+
+    it('should have the property image (base name: "image")', function() {
+      // uncomment below and update the code to test the property image
+      //var instance = new OmnichannelApi.WhatsApp();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property document (base name: "document")', function() {
+      // uncomment below and update the code to test the property document
+      //var instance = new OmnichannelApi.WhatsApp();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property audio (base name: "audio")', function() {
+      // uncomment below and update the code to test the property audio
+      //var instance = new OmnichannelApi.WhatsApp();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
