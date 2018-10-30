@@ -17,63 +17,64 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ErrorItem'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ErrorItem'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.OmnichannelApi) {
       root.OmnichannelApi = {};
     }
-    root.OmnichannelApi.ErrorResponse = factory(root.OmnichannelApi.ApiClient, root.OmnichannelApi.ErrorItem);
+    root.OmnichannelApi.WhatsAppAudio = factory(root.OmnichannelApi.ApiClient);
   }
-}(this, function(ApiClient, ErrorItem) {
+}(this, function(ApiClient) {
   'use strict';
 
 
 
 
   /**
-   * The ErrorResponse model module.
-   * @module model/ErrorResponse
+   * The WhatsAppAudio model module.
+   * @module model/WhatsAppAudio
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>ErrorResponse</code>.
-   * @alias module:model/ErrorResponse
+   * Constructs a new <code>WhatsAppAudio</code>.
+   * @alias module:model/WhatsAppAudio
    * @class
-   * @param errors {Array.<module:model/ErrorItem>} 
+   * @param content {String} Base64-encoded audio
    */
-  var exports = function(errors) {
+  var exports = function(content) {
     var _this = this;
 
-    _this['errors'] = errors;
+    _this['content'] = content;
   };
 
   /**
-   * Constructs a <code>ErrorResponse</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>WhatsAppAudio</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ErrorResponse} obj Optional instance to populate.
-   * @return {module:model/ErrorResponse} The populated <code>ErrorResponse</code> instance.
+   * @param {module:model/WhatsAppAudio} obj Optional instance to populate.
+   * @return {module:model/WhatsAppAudio} The populated <code>WhatsAppAudio</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('errors')) {
-        obj['errors'] = ApiClient.convertToType(data['errors'], [ErrorItem]);
+      if (data.hasOwnProperty('content')) {
+        obj['content'] = ApiClient.convertToType(data['content'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Array.<module:model/ErrorItem>} errors
+   * Base64-encoded audio
+   * @member {String} content
    */
-  exports.prototype['errors'] = undefined;
+  exports.prototype['content'] = undefined;
 
 
 

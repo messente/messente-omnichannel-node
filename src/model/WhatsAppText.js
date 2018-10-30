@@ -26,7 +26,7 @@
     if (!root.OmnichannelApi) {
       root.OmnichannelApi = {};
     }
-    root.OmnichannelApi.Message = factory(root.OmnichannelApi.ApiClient);
+    root.OmnichannelApi.WhatsAppText = factory(root.OmnichannelApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,63 +35,56 @@
 
 
   /**
-   * The Message model module.
-   * @module model/Message
+   * The WhatsAppText model module.
+   * @module model/WhatsAppText
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>Message</code>.
-   * @alias module:model/Message
+   * Constructs a new <code>WhatsAppText</code>.
+   * @alias module:model/WhatsAppText
    * @class
-   * @param channel {String} 
+   * @param body {String} Plaintext content for WhatsApp, can contains URLs, emojis and formatting
    */
-  var exports = function(channel) {
+  var exports = function(body) {
     var _this = this;
 
-    _this['channel'] = channel;
 
-
+    _this['body'] = body;
   };
 
   /**
-   * Constructs a <code>Message</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>WhatsAppText</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Message} obj Optional instance to populate.
-   * @return {module:model/Message} The populated <code>Message</code> instance.
+   * @param {module:model/WhatsAppText} obj Optional instance to populate.
+   * @return {module:model/WhatsAppText} The populated <code>WhatsAppText</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('channel')) {
-        obj['channel'] = ApiClient.convertToType(data['channel'], 'String');
+      if (data.hasOwnProperty('preview_url')) {
+        obj['preview_url'] = ApiClient.convertToType(data['preview_url'], 'Boolean');
       }
-      if (data.hasOwnProperty('sender')) {
-        obj['sender'] = ApiClient.convertToType(data['sender'], 'String');
-      }
-      if (data.hasOwnProperty('validity')) {
-        obj['validity'] = ApiClient.convertToType(data['validity'], 'Number');
+      if (data.hasOwnProperty('body')) {
+        obj['body'] = ApiClient.convertToType(data['body'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} channel
+   * Whether to display link preview if the message contains a hyperlink.
+   * @member {Boolean} preview_url
+   * @default true
    */
-  exports.prototype['channel'] = undefined;
+  exports.prototype['preview_url'] = true;
   /**
-   * Phone number or alphanumeric sender name
-   * @member {String} sender
+   * Plaintext content for WhatsApp, can contains URLs, emojis and formatting
+   * @member {String} body
    */
-  exports.prototype['sender'] = undefined;
-  /**
-   * After how many minutes this channel is considered as failed and the next channel is attempted
-   * @member {Number} validity
-   */
-  exports.prototype['validity'] = undefined;
+  exports.prototype['body'] = undefined;
 
 
 
