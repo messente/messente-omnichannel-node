@@ -37,7 +37,7 @@
   /**
    * The DeliveryReportResponse model module.
    * @module model/DeliveryReportResponse
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

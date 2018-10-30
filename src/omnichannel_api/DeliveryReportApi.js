@@ -34,7 +34,7 @@
   /**
    * DeliveryReport service.
    * @module omnichannel_api/DeliveryReportApi
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

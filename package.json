@@ -1,7 +1,7 @@
 {
   "name": "omnichannel_api",
-  "version": "0.0.1",
-  "description": "Messentes_API_which_allows_sending_messages_via_various_channels_with_fallback_options_",
+  "version": "0.0.2",
+  "description": "Messentes API which allows sending messages via various channels with fallback options",
   "license": "Apache 2.0",
   "main": "src/index.js",
   "scripts": {

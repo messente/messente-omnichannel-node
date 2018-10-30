@@ -37,7 +37,7 @@
   /**
    * The ErrorItem model module.
    * @module model/ErrorItem
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**
