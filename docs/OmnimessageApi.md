@@ -16,24 +16,24 @@ Cancels a scheduled Omnimessage
 
 ### Example
 ```javascript
-const OmnichannelApi = require('omnichannel_api');
-const defaultClient = OmnichannelApi.ApiClient.instance;
+var OmnichannelApi = require('omnichannel_api');
+var defaultClient = OmnichannelApi.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
-const basicAuth = defaultClient.authentications['basicAuth'];
-basicAuth.username = 'YOUR_MESSENTE_API_USERNAME';
-basicAuth.password = 'YOUR_MESSENTE_API_PASSWORD';
+var basicAuth = defaultClient.authentications['basicAuth'];
+basicAuth.username = 'YOUR USERNAME';
+basicAuth.password = 'YOUR PASSWORD';
 
-const omnimessageId = null; // String | UUID of the scheduled Omnimessage to be cancelled
-const api = new OmnichannelApi.OmnimessageApi();
-
-api.cancelScheduledMessage(omnimessageId, (error, data) => {
-    if (error) {
-        console.error(error);
-    } else {
-        console.log('API called successfully. Returned data: ', data);
-    }
-});
+var apiInstance = new OmnichannelApi.OmnimessageApi();
+var omnimessageId = null; // String | UUID of the scheduled Omnimessage to be cancelled
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.cancelScheduledMessage(omnimessageId, callback);
 ```
 
 ### Parameters
@@ -63,42 +63,24 @@ Sends an Omnimessage
 
 ### Example
 ```javascript
-const OmnichannelApi = require('omnichannel_api');
-
-const defaultClient = OmnichannelApi.ApiClient.instance;
+var OmnichannelApi = require('omnichannel_api');
+var defaultClient = OmnichannelApi.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
-const basicAuth = defaultClient.authentications['basicAuth'];
-basicAuth.username = 'YOUR_MESSENTE_API_USERNAME';
-basicAuth.password = 'YOUR_MESSENTE_API_PASSWORD';
+var basicAuth = defaultClient.authentications['basicAuth'];
+basicAuth.username = 'YOUR USERNAME';
+basicAuth.password = 'YOUR PASSWORD';
 
-const api = new OmnichannelApi.OmnimessageApi();
-
-const viber = OmnichannelApi.Viber.constructFromObject(
-    {
-        text:"Hello Viber!",
-        sender: "Messente",
-    }
-);
-
-const sms = OmnichannelApi.SMS.constructFromObject(
-    {
-        text: "Hello SMS!",
-    }
-);
-
-const omnimessage = OmnichannelApi.Omnimessage.constructFromObject({
-    messages: [viber, sms],
-    to:"<phone number in international format>"
-});
-
-api.sendOmnimessage(omnimessage, (error, data) => {
-    if (error) {
-        console.error(error);
-    } else {
-        console.log('API called successfully. Returned data: ', data);
-    }
-});
+var apiInstance = new OmnichannelApi.OmnimessageApi();
+var omnimessage = new OmnichannelApi.Omnimessage(); // Omnimessage | Omnimessage to be sent
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.sendOmnimessage(omnimessage, callback);
 ```
 
 ### Parameters

@@ -27,7 +27,7 @@ Finally, switch to the directory you want to use omnichannel_api from, and run:
 npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
 ```
 
-You should now be able to `require('omnichannel_api')` in javascript files from the directory you ran the last 
+You should now be able to `require('{{{projectName}}}')` in javascript files from the directory you ran the last 
 command above from.
 
 ### For browser
@@ -113,42 +113,36 @@ api.sendOmnimessage(omnimessage, (error, data) => {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.messente.com/v1*
+All URIs are relative to *{{basePath}}*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*OmnichannelApi.DeliveryReportApi* | [**retrieveDeliveryReport**](docs/DeliveryReportApi.md#retrieveDeliveryReport) | **GET** /omnimessage/{omnimessage_id}/status | Retrieves the delivery report for the Omnimessage
-*OmnichannelApi.OmnimessageApi* | [**cancelScheduledMessage**](docs/OmnimessageApi.md#cancelScheduledMessage) | **DELETE** /omnimessage/{omnimessage_id} | Cancels a scheduled Omnimessage
-*OmnichannelApi.OmnimessageApi* | [**sendOmnimessage**](docs/OmnimessageApi.md#sendOmnimessage) | **POST** /omnimessage | Sends an Omnimessage
-
+{{#apiInfo}}{{#apis}}{{#operations}}{{#operation}}*{{moduleName}}.{{classname}}* | [**{{operationId}}**]({{apiDocPath}}{{classname}}.md#{{operationId}}) | **{{httpMethod}}** {{path}} | {{#summary}}{{summary}}{{/summary}}
+{{/operation}}{{/operations}}{{/apis}}{{/apiInfo}}
 
 ## Documentation for Models
 
- - [OmnichannelApi.Channel](docs/Channel.md)
- - [OmnichannelApi.DeliveryReportResponse](docs/DeliveryReportResponse.md)
- - [OmnichannelApi.DeliveryResult](docs/DeliveryResult.md)
- - [OmnichannelApi.Err](docs/Err.md)
- - [OmnichannelApi.ErrorItem](docs/ErrorItem.md)
- - [OmnichannelApi.ErrorResponse](docs/ErrorResponse.md)
- - [OmnichannelApi.MessageResult](docs/MessageResult.md)
- - [OmnichannelApi.OmniMessageCreateSuccessResponse](docs/OmniMessageCreateSuccessResponse.md)
- - [OmnichannelApi.Omnimessage](docs/Omnimessage.md)
- - [OmnichannelApi.ResponseErrorCode](docs/ResponseErrorCode.md)
- - [OmnichannelApi.ResponseErrorTitle](docs/ResponseErrorTitle.md)
- - [OmnichannelApi.SMS](docs/SMS.md)
- - [OmnichannelApi.Status](docs/Status.md)
- - [OmnichannelApi.Viber](docs/Viber.md)
- - [OmnichannelApi.WhatsApp](docs/WhatsApp.md)
- - [OmnichannelApi.WhatsAppAudio](docs/WhatsAppAudio.md)
- - [OmnichannelApi.WhatsAppDocument](docs/WhatsAppDocument.md)
- - [OmnichannelApi.WhatsAppImage](docs/WhatsAppImage.md)
- - [OmnichannelApi.WhatsAppText](docs/WhatsAppText.md)
-
+{{#models}}{{#model}} - [{{moduleName}}.{{classname}}]({{modelDocPath}}{{classname}}.md)
+{{/model}}{{/models}}
 
 ## Documentation for Authorization
 
+{{^authMethods}} All endpoints do not require authorization.
+{{/authMethods}}{{#authMethods}}{{#last}} Authentication schemes defined for the API:{{/last}}{{/authMethods}}
+{{#authMethods}}### {{name}}
 
-### basicAuth
+{{#isApiKey}}- **Type**: API key
+- **API key parameter name**: {{keyParamName}}
+- **Location**: {{#isKeyInQuery}}URL query string{{/isKeyInQuery}}{{#isKeyInHeader}}HTTP header{{/isKeyInHeader}}
+{{/isApiKey}}
+{{#isBasic}}- **Type**: HTTP basic authentication
+{{/isBasic}}
+{{#isOAuth}}- **Type**: OAuth
+- **Flow**: {{flow}}
+- **Authorization URL**: {{authorizationUrl}}
+- **Scopes**: {{^scopes}}N/A{{/scopes}}
+{{#scopes}}  - {{scope}}: {{description}}
+{{/scopes}}
+{{/isOAuth}}
 
-- **Type**: HTTP basic authentication
-
+{{/authMethods}}
