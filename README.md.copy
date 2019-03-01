@@ -6,9 +6,15 @@ OmnichannelApi - JavaScript client for Messente Omnichannel API
 
 ### For [Node.js](https://nodejs.org/)
 
+#### npm
+
+```shell
+npm install omnichannel_api --save
+```
+
 ##### Local development
 
-To use the library locally, first install the dependencies by changing
+To use the library locally , first install the dependencies by changing
 into the directory containing `package.json` (and this README). Let's call this `JAVASCRIPT_CLIENT_DIR`. Then run:
 
 ```shell
@@ -21,7 +27,7 @@ Next, [link](https://docs.npmjs.com/cli/link) it globally in npm with the follow
 npm link
 ```
 
-Finally, switch to the directory you want to use omnichannel_api from, and run:
+Finally, switch to the directory you want to use your omnichannel_api from, and run:
 
 ```shell
 npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
@@ -130,6 +136,7 @@ Class | Method | HTTP request | Description
  - [OmnichannelApi.Err](docs/Err.md)
  - [OmnichannelApi.ErrorItem](docs/ErrorItem.md)
  - [OmnichannelApi.ErrorResponse](docs/ErrorResponse.md)
+ - [OmnichannelApi.Message](docs/Message.md)
  - [OmnichannelApi.MessageResult](docs/MessageResult.md)
  - [OmnichannelApi.OmniMessageCreateSuccessResponse](docs/OmniMessageCreateSuccessResponse.md)
  - [OmnichannelApi.Omnimessage](docs/Omnimessage.md)

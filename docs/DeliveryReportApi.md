@@ -15,24 +15,24 @@ Retrieves the delivery report for the Omnimessage
 
 ### Example
 ```javascript
-const OmnichannelApi = require('omnichannel_api');
-const defaultClient = OmnichannelApi.ApiClient.instance;
+var OmnichannelApi = require('omnichannel_api');
+var defaultClient = OmnichannelApi.ApiClient.instance;
 
 // Configure HTTP basic authorization: basicAuth
-const basicAuth = defaultClient.authentications['basicAuth'];
-basicAuth.username = 'YOUR_MESSENTE_API_USERNAME';
-basicAuth.password = 'YOUR_MESSENTE_API_PASSWORD';
+var basicAuth = defaultClient.authentications['basicAuth'];
+basicAuth.username = 'YOUR USERNAME';
+basicAuth.password = 'YOUR PASSWORD';
 
-const api = new OmnichannelApi.DeliveryReportApi();
-const omnimessageId = null; // String | UUID of the Omnimessage to for which the delivery report is to be retrieved
-
-api.retrieveDeliveryReport(omnimessageId, (error, data) => {
-    if (error) {
-        console.error(error);
-    } else {
-        console.log('API called successfully. Returned data: ', data);
-    }
-});
+var apiInstance = new OmnichannelApi.DeliveryReportApi();
+var omnimessageId = null; // String | UUID of the Omnimessage to for which the delivery report is to be retrieved
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.retrieveDeliveryReport(omnimessageId, callback);
 ```
 
 ### Parameters

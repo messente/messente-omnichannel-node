@@ -1,0 +1,4 @@
+{
+    "projectVersion": "0.1.0",
+    "projectDescription": "Messentes API which allows sending messages via various channels with fallback options"
+}
